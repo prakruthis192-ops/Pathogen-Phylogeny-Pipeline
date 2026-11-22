@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+results/trees/*.ckp.gz
+results/trees/*.bionj
+results/trees/*.mldist
