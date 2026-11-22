@@ -18,4 +18,9 @@ micromamba activate phylo-pipe
 # 2. Fetch raw CDS data & run codon-aware alignment
 python3 scripts/fetch_sequences.py
 python3 scripts/codon_align.py
+
+#3. Infer maximum-likelihood phylogeny & render tree figure
+python3 scripts/build_and_plot_tree.py
 ```
+## Latest Output: Maximum-Likelihood Phylogeny
+![H3N2 HA Maximum-Likelihood Phylogeny](results/figures/h3n2_phylogeny.png)
