@@ -36,7 +36,6 @@ def plot_phylogeny():
     fig, ax = plt.subplots(figsize=(12, 8))
     plt.rcParams["font.sans-serif"] = "Arial"
 
-    # Format bootstrap labels (show values >= 70% for readability)
     def get_label(clade):
         if clade.is_terminal():
             return f"  {clade.name}"
@@ -52,7 +51,6 @@ def plot_phylogeny():
         branch_labels=None
     )
 
-    # Style axes and typography
     ax.set_title(
         "Maximum-Likelihood Phylogeny of Influenza A (H3N2) Hemagglutinin (HA)\n"
         "ModelFinder Best-Fit + 1,000 Ultrafast Bootstraps",
@@ -60,14 +58,13 @@ def plot_phylogeny():
         fontweight="bold",
         pad=15
     )
-    ax.set_xlabel("Substitutions per Site", fontsize=11)    ax.ticklabel_format(axis="x", style="sci", scilimits=(-2, 2))
-
+    ax.set_xlabel("Substitutions per Site", fontsize=11)
+    ax.ticklabel_format(axis="x", style="sci", scilimits=(-2, 2))
     ax.set_ylabel("Isolate", fontsize=11)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.grid(axis="x", linestyle="--", alpha=0.4)
 
-    # Color internal bootstrap labels blue for visual clarity
     for text in ax.texts:
         label_txt = text.get_text().strip()
         if label_txt.isdigit():
